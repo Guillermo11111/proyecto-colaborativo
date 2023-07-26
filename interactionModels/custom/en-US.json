@@ -1,0 +1,626 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "folio",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.96583449579.431463905269"
+              }
+            }
+          ],
+          "name": "darFolioIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "resp",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "values": [
+                    "No",
+                    "no",
+                    "si",
+                    "Si",
+                    "Yes",
+                    "yes"
+                  ],
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.746124615376.1627499144485.802089965944"
+                }
+              ],
+              "type": "sino",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.746124615376.1627499144485"
+              }
+            }
+          ],
+          "name": "mostrarDenuevo",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "elicitationRequired": true,
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.535866900343.1518748207269"
+              }
+            },
+            {
+              "name": "hora",
+              "elicitationRequired": true,
+              "type": "AMAZON.TIME",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.535866900343.168996398742"
+              }
+            },
+            {
+              "name": "terapia",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "values": [
+                    "pulmonary",
+                    "geriatric",
+                    "sporty",
+                    "pediatric"
+                  ],
+                  "type": "isInSet",
+                  "prompt": "Slot.Validation.959474780886.1603807669941.1592969997593"
+                }
+              ],
+              "type": "terapia",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.535866900343.1064097142289"
+              }
+            }
+          ],
+          "name": "recibeDatosAgendar",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "elicitationRequired": true,
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1339181189596.709172663962"
+              }
+            },
+            {
+              "name": "hora",
+              "elicitationRequired": true,
+              "type": "AMAZON.TIME",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1339181189596.1257596983231"
+              }
+            }
+          ],
+          "name": "recibeDatosReagendar",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "elicitationRequired": true,
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1078719826609.1579075652467"
+              }
+            }
+          ],
+          "name": "pedirFechaCitas",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "bye",
+            "close"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "entrarBlog",
+          "samples": [
+            "show me the blog",
+            "I would like to see the blog",
+            "the blog",
+            "I want to see the blog"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "realizaConsulta",
+          "samples": [
+            "a consult",
+            "I want to consult an appointment",
+            "I want to ask a question",
+            "i want to make a consult",
+            "the consultation",
+            "I want to make a query",
+            "I want to check my appointment",
+            "I want to make a query about my appointment"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "folio",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "darFolioIntent",
+          "samples": [
+            "are {folio}",
+            "the folio is {folio}",
+            "my folio is {folio}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "cancelaCita",
+          "samples": [
+            "cancel appointment",
+            "cancel the appointment",
+            "I want to cancel an appointment",
+            "cancel an appointment",
+            "cancel my appointment",
+            "I want to cancel my appointment"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "folio",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "darfoliocancelar",
+          "samples": [
+            "the cancellation folio is {folio}",
+            "My folio number to cancel is {folio}",
+            "My cancellation folio is {folio}",
+            "the folio to cancel is {folio}",
+            "my folio to cancel is {folio}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "folio",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "darFolioReagendar",
+          "samples": [
+            "the digits of the folio to reschedule are {folio}",
+            "The folio number to reschedule is {folio}",
+            "My folio number to reschedule is {folio}",
+            "the page to reschedule is {folio}",
+            "My folio to reschedule is {folio}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "token",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "name": "darToken",
+          "samples": [
+            "the digits of my token are {token}",
+            "the digits of the token are {token}",
+            "my login token is {token}",
+            "is {token}",
+            "the token is {token}",
+            "my token is {token}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "reagendaCita",
+          "samples": [
+            "reschedule appointment",
+            "I need to reschedule my appointment",
+            "reschedule",
+            "I want to reschedule",
+            "I want to reschedule my appointment"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "agendaCita",
+          "samples": [
+            "I need to book an appointment",
+            "schedule an appointment",
+            "schedule",
+            "I want to schedule",
+            "I want to schedule an appointment"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "dia",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "name": "reagendarFecha",
+          "samples": [
+            "the year for the new appointment is {dia}",
+            "the new month is {dia}",
+            "the new day is {dia}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "the date will be {fecha}",
+                "{fecha}",
+                "on {fecha}"
+              ]
+            },
+            {
+              "name": "hora",
+              "type": "AMAZON.TIME",
+              "samples": [
+                "at {hora}",
+                "{hora}",
+                "the time will be at {hora}"
+              ]
+            },
+            {
+              "name": "terapia",
+              "type": "terapia",
+              "samples": [
+                "therapy type is {terapia}",
+                "is {terapia}",
+                "the guy is {terapia}",
+                "{terapia}"
+              ]
+            }
+          ],
+          "name": "recibeDatosAgendar",
+          "samples": [
+            "the date will be on {fecha} at {hora}",
+            "for {fecha} at {hora}",
+            "therapy is {terapia}",
+            "is {terapia}",
+            "{hora}",
+            "at {hora}",
+            "{fecha}",
+            "on {fecha}",
+            "by {fecha}",
+            "the date will be {fecha}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "name": "recibeFechaCita",
+          "samples": [
+            "tell me the appointments I have {fecha}",
+            "tell me the appointments I have on {fecha}",
+            "the appointments of {fecha}",
+            "tell me the appointments of {fecha}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "resp",
+              "type": "sino"
+            }
+          ],
+          "name": "mostrarDenuevo",
+          "samples": [
+            "{resp} I would like to",
+            "{resp} wish",
+            "{resp} I want"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "the new date is {fecha}",
+                "by {fecha}",
+                "{fecha}"
+              ]
+            },
+            {
+              "name": "hora",
+              "type": "AMAZON.TIME",
+              "samples": [
+                "at {hora}",
+                "{hora}",
+                "by {hora}"
+              ]
+            }
+          ],
+          "name": "recibeDatosReagendar",
+          "samples": [
+            "the new date is {fecha} at {hora}",
+            "the new date is {fecha} at {hora}",
+            "the new date is {fecha} at {hora}",
+            "the new time is for {hora}",
+            "the new appointment time is {hora}",
+            "the new time is {hora}",
+            "the new date is",
+            "the new date is for {fecha}",
+            "the new appointment date is {fecha}",
+            "the new date is {fecha}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "consultarCitaTerapeuta",
+          "samples": [
+            "consult the agenda",
+            "the agenda",
+            "check my schedule",
+            "the dates",
+            "consult appointments",
+            "I want to consult appointments",
+            "I want to check my appointments",
+            "I want to check appointments"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "fecha",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "name": "pedirFechaCitas",
+          "samples": [
+            "the appointments for {fecha}",
+            "the appointments I have for {fecha}",
+            "appointments for {fecha}",
+            "appointments I have {fecha}",
+            "{fecha} appointments",
+            "the appointments I have on {fecha}",
+            "the appointments I have {fecha}",
+            "the appointments of {fecha}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "yes"
+              }
+            },
+            {
+              "name": {
+                "value": "no"
+              }
+            },
+            {
+              "name": {
+                "value": "si"
+              }
+            }
+          ],
+          "name": "sino"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "pulmonary"
+              }
+            },
+            {
+              "name": {
+                "value": "sporty"
+              }
+            },
+            {
+              "name": {
+                "value": "pediatric"
+              }
+            },
+            {
+              "name": {
+                "value": "geriatric"
+              }
+            }
+          ],
+          "name": "terapia"
+        }
+      ],
+      "invocationName": "proficio huejutla"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "please enter the folio"
+          },
+          {
+            "type": "PlainText",
+            "value": "the folio is necessary"
+          }
+        ],
+        "id": "Elicit.Slot.96583449579.431463905269"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "you can answer saying if I want or I don\u0027t want"
+          }
+        ],
+        "id": "Elicit.Slot.746124615376.1627499144485"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "you can use only yes or no"
+          }
+        ],
+        "id": "Slot.Validation.746124615376.1627499144485.802089965944"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "date"
+          },
+          {
+            "type": "PlainText",
+            "value": "the date"
+          },
+          {
+            "type": "PlainText",
+            "value": "You already told me that at {hora} , but not the date"
+          }
+        ],
+        "id": "Elicit.Slot.535866900343.1518748207269"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "time"
+          },
+          {
+            "type": "PlainText",
+            "value": "the time"
+          },
+          {
+            "type": "PlainText",
+            "value": "You already told me that on {fecha}, but you haven\u0027t told me the time"
+          }
+        ],
+        "id": "Elicit.Slot.535866900343.168996398742"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "therapy"
+          },
+          {
+            "type": "PlainText",
+            "value": "the therapy"
+          },
+          {
+            "type": "PlainText",
+            "value": "You already told me that on {fecha} at {hora} , but you haven\u0027t told me the type of therapy"
+          }
+        ],
+        "id": "Elicit.Slot.535866900343.1064097142289"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "mentions only between sports, geriatric, pediatric or pulmonary therapy"
+          }
+        ],
+        "id": "Slot.Validation.959474780886.1603807669941.1592969997593"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "time"
+          },
+          {
+            "type": "PlainText",
+            "value": "the time"
+          }
+        ],
+        "id": "Elicit.Slot.1339181189596.1257596983231"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You already told me that at {hora}  , but you still haven\u0027t told me the date"
+          },
+          {
+            "type": "PlainText",
+            "value": "give me the date"
+          },
+          {
+            "type": "PlainText",
+            "value": "date"
+          },
+          {
+            "type": "PlainText",
+            "value": "the date"
+          }
+        ],
+        "id": "Elicit.Slot.1339181189596.709172663962"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "give me the date to consult the appointments"
+          }
+        ],
+        "id": "Elicit.Slot.1078719826609.1579075652467"
+      }
+    ]
+  }
+}
